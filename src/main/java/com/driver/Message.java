@@ -13,6 +13,7 @@ public class Message {
         this.timestamp = timestamp;
     }
 
+    //for passing test case
     public Message(int id, String content) {
         this.id = id;
         this.content = content;
