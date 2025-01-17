@@ -49,9 +49,9 @@ public class WhatsappRepository {
         Group group = null;
         if (users.size() == 2)
         {
-            group = new Group(users.get(0).getName(), users.size());
+            group = new Group(users.get(1).getName(), users.size());
         }
-        else
+        if (users.size() > 2)
         {
             group = new Group("Group " + (++customGroupCount), users.size());
         }
@@ -102,7 +102,7 @@ public class WhatsappRepository {
 
         if (adminMap.get(group) != approver)
         {
-            throw new RuntimeException("Approver does have rights");
+            throw new RuntimeException("Approver does not have rights");
         }
 
         if (!groupUserMap.get(group).contains(user))
